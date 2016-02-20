@@ -15,7 +15,7 @@ public class RecursiveCircles {
 	
 	public RecursiveCircles() {
 		JFrame frame = new JFrame("CIRCLES");
-		frame.setSize(800, 800);
+		frame.setSize(1980, 800);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		
 		CirclePanel mainPanel = new CirclePanel();
@@ -29,19 +29,25 @@ public class RecursiveCircles {
 	class CirclePanel extends JPanel{
 		
 		private final int DEPTH = 5;
+		private int X_OFFSET;
 		
 		@Override
 		public void paintComponent(Graphics g){
-			drawCircles(g, getWidth()/2, getHeight()/2, getWidth()/6, 1);
+			X_OFFSET = getWidth()/2;
+			drawCircles(g, 0, getHeight()/2, getWidth()/6, 1);
 		}
 		
 		private void drawCircles(Graphics g, int x, int y, int r, int d){
 			g.setColor(new Color(0, 255/d, 0));
-			g.fillOval(x-r, y-r, 2*r, 2*r);
+			g.fillOval((x + X_OFFSET)-r, y-r, 2*r, 2*r);
+//			g.setColor(Color.red);
+//			g.drawString(Integer.toString(d), (x+X_OFFSET), y-r);			
 			if(d < DEPTH){
-				drawCircles(g, x/3, y, r/3, d+1);
-				drawCircles(g, x, y, r/3, d+1);
-				drawCircles(g, (5*x)/3, y, r/3, d+1);
+				d++;
+				int r2 = (r/3 < 3) ? 3 : r/3;
+				drawCircles(g, x-2*r, y, r2, d);
+				drawCircles(g, x, y, r2, d);
+				drawCircles(g, x+2*r, y, r/3, d);
 			}
 		}
 	}
