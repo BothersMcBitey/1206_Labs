@@ -3,8 +3,23 @@ package lab4.q3;
 public class GrayCode {
 
 	public static void main(String[] args){
+		if(args.length != 1){
+			System.err.println("Error: Requires exactly one integer argument");
+			System.exit(1);
+		}
+		int n = 1;
+		try{
+			n = Integer.parseInt(args[0]);
+		}catch (NumberFormatException e){
+			System.err.println("Error: Argument is not an integer");
+			System.exit(1);
+		}
+		if(n < 1){
+			System.err.println("Error: Argument must be greater than 0");
+			System.exit(1);
+		}
 		GrayCode g = new GrayCode();
-		String[] c = g.getGrayCode(4);
+		String[] c = g.getGrayCode(n);
 		for(String s : c){
 			System.out.println(s);
 		}

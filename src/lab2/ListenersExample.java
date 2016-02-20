@@ -40,7 +40,6 @@ public class ListenersExample implements ActionListener{
 	public ListenersExample(){
 		Q1();
 		Q2();
-		Q3();
 	}
 	
 	private void Q1(){
@@ -117,10 +116,6 @@ public class ListenersExample implements ActionListener{
 		
 		frame.pack();
 		frame.setVisible(true);
-	}
-
-	private void Q3(){
-		
 	}
 	
 	@Override
