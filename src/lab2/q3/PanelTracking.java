@@ -55,8 +55,8 @@ public class PanelTracking extends MouseAdapter{
 		for(int i = 0; i < max; i++){
 			JPanel p = new JPanel();
 			
-			int w = r.nextInt(100) + 10;
- 			int h = r.nextInt(100) + 10;
+			int w = r.nextInt(250) + 30;
+ 			int h = r.nextInt(250) + 30;
 			int x = r.nextInt(upperPanel.getWidth() - w);
 			int y = r.nextInt(upperPanel.getHeight() - h);
 			p.setBounds(x, y, w, h);
@@ -90,7 +90,7 @@ public class PanelTracking extends MouseAdapter{
 				}
 				labels[i].setText(i + ": " + e.getX() + ", " + e.getY());
 				int c = 255/labels.length;
-				labels[i].setForeground(new Color(c * i, c * (labels.length - i), 0));
+				labels[i].setForeground(new Color(c * i, c * (labels.length - i), (100 * i) % 255));
 			} else {
 				if(inside[i]){
 					inside[i] = false;
