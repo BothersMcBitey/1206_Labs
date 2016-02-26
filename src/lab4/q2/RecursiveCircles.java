@@ -28,12 +28,12 @@ public class RecursiveCircles {
 	
 	class CirclePanel extends JPanel{
 		
-		private final int DEPTH = 5;
-		private int X_OFFSET;
+		private final int DEPTH = 5; //how many levels of circles to draw
+		private int X_OFFSET;  //how far from the lhs to start drawing
 		
 		@Override
 		public void paintComponent(Graphics g){
-			X_OFFSET = getWidth()/2;
+			X_OFFSET = getWidth()/2; //start drawing in the middle
 			drawCircles(g, 0, getHeight()/2, getWidth()/6, 1);
 		}
 		
