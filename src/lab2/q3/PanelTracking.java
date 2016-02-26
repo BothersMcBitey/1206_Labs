@@ -88,7 +88,7 @@ public class PanelTracking extends MouseAdapter{
 					lowerPanel.add(labels[i]);
 					inside[i] = true;
 				}
-				labels[i].setText(i + ": " + e.getX() + ", " + e.getY());
+				labels[i].setText(i + ": " + (e.getX() - p.getX()) + ", " + (e.getY() - p.getY()));
 				int c = 255/labels.length;
 				labels[i].setForeground(new Color(c * i, c * (labels.length - i), (100 * i) % 255));
 			} else {
