@@ -38,7 +38,7 @@ public class RecursiveCircles {
 		}
 		
 		private void drawCircles(Graphics g, int x, int y, int r, int d){
-			g.setColor(new Color(0, 255/d, 0));
+			g.setColor(new Color(0, 255/d, 0, 200));
 			g.fillOval((x + X_OFFSET)-r, y-r, 2*r, 2*r);		
 			if(d < DEPTH){
 				d++;
