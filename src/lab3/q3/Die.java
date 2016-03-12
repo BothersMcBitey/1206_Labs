@@ -15,7 +15,7 @@ import javax.swing.WindowConstants;
 public class Die extends JPanel {
 	
 	private Color dieColor;
-	private int currentVal;
+	protected int currentVal;
 	private int dotRadius;
 	private Random r;
 
