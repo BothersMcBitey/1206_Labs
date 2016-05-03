@@ -7,8 +7,6 @@ public class SynchRollDie extends RollDie{
 	public int getVal(){
 		int v = 0;
 		
-		
-		
 		return v;
 	}
 }
